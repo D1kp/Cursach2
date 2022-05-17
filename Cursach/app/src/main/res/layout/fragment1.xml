@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BlankFragment"
+    android:background="#FFFFFF">
+
+    <FrameLayout
+        android:layout_width="411dp"
+        android:layout_height="550dp"
+        android:background="@drawable/grad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.964"
+        android:layout_marginTop="344dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:text="Название команды"
+            android:textColor="#303F9F"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/TextPersonName"
+            style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="102dp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="#000000"
+            android:clickable="false"
+            android:ems="10"
+            android:foregroundTint="#000000"
+            android:hapticFeedbackEnabled="false"
+            android:hint="@string/Луноход"
+            android:inputType="textPersonName"
+            android:lineSpacingExtra="8sp"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:textColor="#090909"
+            android:textColorHint="#494848"
+            android:textCursorDrawable="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="350dp"
+            android:backgroundTint="#303F9F"
+            android:text="Администратор"
+            android:textAllCaps="true" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="275dp"
+            android:backgroundTint="#303F9F"
+            android:text="О программе"
+            android:textAllCaps="true" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="200dp"
+            android:backgroundTint="#303F9F"
+            android:text="Я зритель"
+            android:textAllCaps="true" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="125dp"
+            android:backgroundTint="#303F9F"
+            android:text="Подтвердить" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="364dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:contentDescription="@string/Луноход"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/_2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="313dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="120dp"
+        android:lineSpacingExtra="20sp"
+        android:text="Регистрация "
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#F5680D"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+</FrameLayout>

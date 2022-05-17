@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "780735537427",
+    "firebase_url": "https://robostem-f9d54-default-rtdb.firebaseio.com",
+    "project_id": "robostem-f9d54",
+    "storage_bucket": "robostem-f9d54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780735537427:android:d2642efcd7698087d47ae6",
+        "android_client_info": {
+          "package_name": "ru.samsung.itschool.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780735537427-0a1ss5uqirm5l8merc8biaa1okj1lra4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1O5Q1cxDKBr8foFyzYYJeDvhpOweoK9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780735537427-0a1ss5uqirm5l8merc8biaa1okj1lra4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
