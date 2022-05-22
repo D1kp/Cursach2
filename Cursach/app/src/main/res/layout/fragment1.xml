@@ -18,16 +18,6 @@
         app:layout_constraintVertical_bias="0.964"
         android:layout_marginTop="344dp">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
-            android:text="Название команды"
-            android:textColor="#303F9F"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
         <EditText
             android:id="@+id/TextPersonName"
             style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
@@ -122,4 +112,15 @@
         android:typeface="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="300dp"
+        android:text="Название команды"
+        android:textColor="#303F9F"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 </FrameLayout>

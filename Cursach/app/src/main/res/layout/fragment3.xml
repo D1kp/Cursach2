@@ -23,19 +23,20 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="298dp"
+            android:layout_width="362dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:text="В данном приложении вы можете ознакомиться с заданиями открытого  фестиваля по техническом творчеству ROBOSTEM.    "
+            android:layout_marginStart="30dp"
+            android:text="В данном приложении вы можете ознакомиться с заданиями открытого  фестиваля по техническом творчеству ROBOSTEM. Можете перейти на официальный сайт, нажав на икноку   "
             android:textAlignment="center"
             android:textColor="#303F9F"
             android:textSize="24sp"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="298dp"
+            android:layout_width="356dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="280dp"
             android:text="Для этого авторизуйтесь и сканируйте QR-code, который находится на полях организаторов или на специальных стойках.    "
             android:textAlignment="center"
@@ -85,6 +86,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/try3" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

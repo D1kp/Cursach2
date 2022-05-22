@@ -10,27 +10,20 @@
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="241dp"
+        android:layout_marginTop="400dp"
         android:background="#000000" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:layout_marginTop="700dp"
-        android:layout_marginStart="150dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/REc1"
         android:layout_width="match_parent"
         android:layout_height="337dp"
-        android:layout_marginTop="300dp"
         android:background="#000000" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="800dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="700dp"
         android:text="Recview" />
 </FrameLayout>
