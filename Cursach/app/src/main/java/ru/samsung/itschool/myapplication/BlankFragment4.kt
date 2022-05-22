@@ -2,36 +2,22 @@ package ru.samsung.itschool.myapplication
 
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.util.JsonReader
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-import com.fasterxml.jackson.core.JsonParser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.getValue
-import com.google.firebase.database.util.JsonMapper
-import kotlin.collections.indexOf
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.fasterxml.jackson.module.kotlin.readValues
 import android.widget.Toast
 
-import android.widget.TextView
 
-
-import android.widget.AdapterView
-import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ru.samsung.itschool.myapplication.databinding.ActivityMainBinding
 import ru.samsung.itschool.myapplication.databinding.Fragment4Binding
 
 
@@ -57,15 +43,7 @@ class BlankFragment4 : Fragment(),RVAdapter.MyOnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment4, container, false)
-        val btn:Button = view.findViewById(R.id.button2)
-        btn.setOnClickListener(object : View.OnClickListener{
-            override fun onClick(p0: View?) {
-                init()
-                getData()
-            }
 
-
-        })
 
         return view
     }
@@ -82,10 +60,6 @@ class BlankFragment4 : Fragment(),RVAdapter.MyOnClickListener {
                     recview?.layoutManager = LinearLayoutManager(requireContext())
                     recview?.adapter = adapt
                     adapt.addMember(dataBase!!)
-                    val name = arguments?.getString("name")
-                    if (name != null) {
-                        dataBase!![0] = name
-                    }
                 }
 
             })
@@ -96,8 +70,8 @@ class BlankFragment4 : Fragment(),RVAdapter.MyOnClickListener {
     private fun init(){
         listview = view?.findViewById(R.id.listView)
         dataBase = ArrayList()
-        adapter = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1, dataBase!!)
-        listview?.adapter = adapter
+        listdata = ArrayList()
+
         recview = view?.findViewById(R.id.REc1)
 
     }
@@ -113,8 +87,10 @@ class BlankFragment4 : Fragment(),RVAdapter.MyOnClickListener {
                     dataBase!!.clear()
                 }
                 for(ds:DataSnapshot in snapshot.children){
-                    val userModel: Member? = ds.getValue(Member::class.java)
-                    dataBase!!.add(userModel?.komand.toString())
+                    val userModel= ds.value as HashMap<*, *>
+                    val name = userModel.get("komand")
+                    //Toast.makeText(requireContext(),"$userModel",Toast.LENGTH_LONG).show()
+                    dataBase!!.add(name.toString())
                 }
                 adapter?.notifyDataSetChanged()
             }
@@ -125,16 +101,45 @@ class BlankFragment4 : Fragment(),RVAdapter.MyOnClickListener {
         myRef.addValueEventListener(vListener)
 
         for(i in 0 until dataBase!!.size){
-            val member = Member(null.toString(),dataBase!![i])
+            val member = Member(null,dataBase!![i])
             memberlist.add(member)
         }
     }
 
+    fun getlinkUser(name:String){
 
+        val vListener: ValueEventListener = object:ValueEventListener{
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(listdata.size > 0) {
+                    listdata.clear()
+                }
+                for(ds:DataSnapshot in snapshot.children){
+                    val userModel= ds.value as HashMap<*, *>
+                    val zadacha = userModel.get("zadacha")
+
+                         if(userModel.get("komand") == name){
+                             val splitzad = zadacha.toString().split(", ").toMutableList()
+                             for(i in 0 until splitzad.size){
+                                 splitzad[i] = splitzad[i].replace("[","")
+                                 splitzad[i] = splitzad[i].replace("]","")
+                                 listdata.add(splitzad[i])
+                             }
+                    }
+                    adapter?.notifyDataSetChanged()
+                }
+
+            }
+            override fun onCancelled(error: DatabaseError) {
+                Log.w(TAG, "Failed to read value.", error.toException())
+            }
+        }
+        myRef.addListenerForSingleValueEvent(vListener)
+    }
     override fun OnClick(member:Member) {
-       // adapter = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1, dataBase!!)
-       // listview?.adapter = adapter
-        Toast.makeText(requireContext(),"Нажали на ${member.komand}",Toast.LENGTH_LONG).show()
+        getlinkUser(member.komand)
+        adapter = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1, listdata)
+        listview?.adapter = adapter
     }
 }
 

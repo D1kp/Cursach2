@@ -53,6 +53,9 @@ class ScannerActivity : Fragment(), ZBarScannerView.ResultHandler {
         else{
             bundle.putString("error","Гы гы гы )))) Не то")
         }
+        bundle.putString("uid",arguments?.getString("uid"))
+        bundle.putString("name",arguments?.getString("name"))
+        bundle.putStringArrayList("link",arguments?.getStringArrayList("link"))
         view?.findNavController()?.navigate(R.id.action_scannerActivity_to_blankFragment2,bundle)
     }
 }

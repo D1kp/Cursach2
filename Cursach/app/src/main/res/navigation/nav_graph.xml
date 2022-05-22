@@ -32,13 +32,23 @@
         <action
             android:id="@+id/action_blankFragment2_to_blankFragment"
             app:destination="@id/blankFragment" />
-        <argument android:name="error" />
+        <argument android:name="name"
+            app:argType="string" />
+        <argument android:name="error"
+            app:argType="string" />
+        <argument
+            android:name="uid"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment3"
         android:name="ru.samsung.itschool.myapplication.BlankFragment3"
         android:label="fragment3"
-        tools:layout="@layout/fragment3" />
+        tools:layout="@layout/fragment3" >
+        <action
+            android:id="@+id/action_blankFragment3_to_blankFragment"
+            app:destination="@id/blankFragment" />
+    </fragment>
     <fragment
         android:id="@+id/blankFragment4"
         android:name="ru.samsung.itschool.myapplication.BlankFragment4"
@@ -61,5 +71,10 @@
         <action
             android:id="@+id/action_scannerActivity_to_blankFragment2"
             app:destination="@id/blankFragment2" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument android:name="uid"
+            app:argType="string" />
     </fragment>
 </navigation>

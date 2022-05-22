@@ -1,16 +1,9 @@
 package ru.samsung.itschool.myapplication
 
-import android.annotation.SuppressLint
-import android.content.ContentValues
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import ru.samsung.itschool.myapplication.databinding.MemberItemBinding
 
 class RVAdapter(memberslist:ArrayList<Member>,val listener:MyOnClickListener):RecyclerView.Adapter<RVAdapter.RVHolder>() {
@@ -42,7 +35,7 @@ class RVAdapter(memberslist:ArrayList<Member>,val listener:MyOnClickListener):Re
     fun addMember(dataBase:ArrayList<String>){
         var member:Member
         for(i in 0 until dataBase.size){
-            member = Member(null.toString(),dataBase[i])
+            member = Member(null,dataBase[i])
             memberlist.add(member)
         }
 
