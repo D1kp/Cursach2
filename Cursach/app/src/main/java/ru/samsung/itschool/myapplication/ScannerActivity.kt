@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import me.dm7.barcodescanner.zbar.Result
 import me.dm7.barcodescanner.zbar.ZBarScannerView
 
@@ -23,15 +22,15 @@ class ScannerActivity : Fragment(), ZBarScannerView.ResultHandler {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view:View=inflater.inflate(R.layout.activity_scanner, container, false)
-            zbView = ZBarScannerView(requireContext())
+    ): View {
+
+        zbView = ZBarScannerView(requireContext())
 
         return zbView
     }
 
     //zbView = ZBarScannerView(this)
-   //setContentView(zbView)
+    //setContentView(zbView)
     override fun onPause() {
         super.onPause()
         zbView.stopCamera()
@@ -53,9 +52,17 @@ class ScannerActivity : Fragment(), ZBarScannerView.ResultHandler {
         else{
             bundle.putString("error","Гы гы гы )))) Не то")
         }
-        bundle.putString("uid",arguments?.getString("uid"))
-        bundle.putString("name",arguments?.getString("name"))
-        bundle.putStringArrayList("link",arguments?.getStringArrayList("link"))
-        view?.findNavController()?.navigate(R.id.action_scannerActivity_to_blankFragment2,bundle)
+        val fragment:Int? =arguments?.getInt("fragment")
+        bundle.putInt("count", arguments?.getInt("count")!!)
+        bundle.putString("quest", arguments?.getString("quest"))
+        bundle.putString("help", arguments?.getString("help"))
+        when (fragment) {
+            7 -> view?.findNavController()?.navigate(R.id.action_scannerActivity_to_blankFragment7,bundle)
+            5 -> view?.findNavController()?.navigate(R.id.action_scannerActivity_to_blankFragment5,bundle)
+            else -> { // Note the block
+                view?.findNavController()?.navigate(R.id.action_scannerActivity_to_blankFragment2,bundle)
+            }
+        }
+
     }
 }

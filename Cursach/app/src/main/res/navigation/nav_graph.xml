@@ -12,12 +12,17 @@
         <action
             android:id="@+id/action_blankFragment_to_blankFragment2"
             app:destination="@id/blankFragment2" />
+
         <action
             android:id="@+id/action_blankFragment_to_blankFragment3"
             app:destination="@id/blankFragment3" />
         <action
             android:id="@+id/action_blankFragment_to_blankFragment4"
             app:destination="@id/blankFragment4" />
+        <action
+            android:id="@+id/action_blankFragment_to_blankFragment5"
+            app:destination="@id/blankFragment5" />
+
     </fragment>
     <fragment
         android:id="@+id/blankFragment2"
@@ -32,13 +37,7 @@
         <action
             android:id="@+id/action_blankFragment2_to_blankFragment"
             app:destination="@id/blankFragment" />
-        <argument android:name="name"
-            app:argType="string" />
-        <argument android:name="error"
-            app:argType="string" />
-        <argument
-            android:name="uid"
-            app:argType="string" />
+        <argument android:name="error" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment3"
@@ -71,10 +70,55 @@
         <action
             android:id="@+id/action_scannerActivity_to_blankFragment2"
             app:destination="@id/blankFragment2" />
-        <argument
-            android:name="name"
-            app:argType="string" />
-        <argument android:name="uid"
-            app:argType="string" />
+        <action
+            android:id="@+id/action_scannerActivity_to_blankFragment5"
+            app:destination="@id/blankFragment5" />
+        <action
+            android:id="@+id/action_scannerActivity_to_blankFragment7"
+            app:destination="@id/blankFragment7" />
+        <action
+            android:id="@+id/action_scannerActivity_to_blankFragment52"
+            app:destination="@id/blankFragment5" />
     </fragment>
+    <fragment
+        android:id="@+id/blankFragment5"
+        android:name="ru.samsung.itschool.myapplication.BlankFragment5"
+        android:label="fragment5"
+        tools:layout="@layout/fragment5" >
+        <action
+            android:id="@+id/action_blankFragment5_to_blankFragment"
+            app:destination="@id/blankFragment" />
+        <action
+            android:id="@+id/action_blankFragment5_to_scannerActivity"
+            app:destination="@id/scannerActivity" />
+        <action
+            android:id="@+id/action_blankFragment5_to_blankFragment6"
+            app:destination="@id/blankFragment6" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment6"
+        android:name="ru.samsung.itschool.myapplication.BlankFragment6"
+        android:label="fragment6"
+        tools:layout="@layout/fragment6" >
+        <action
+            android:id="@+id/action_blankFragment6_to_blankFragment5"
+            app:destination="@id/blankFragment5" />
+        <action
+            android:id="@+id/action_blankFragment6_to_blankFragment7"
+            app:destination="@id/blankFragment7" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment7"
+        android:name="ru.samsung.itschool.myapplication.BlankFragment7"
+        android:label="fragment7"
+        tools:layout="@layout/fragment7" >
+        <action
+            android:id="@+id/action_blankFragment7_to_blankFragment6"
+            app:destination="@id/blankFragment6" />
+        <action
+            android:id="@+id/action_blankFragment7_to_scannerActivity"
+            app:destination="@id/scannerActivity" />
+    </fragment>
+
+
 </navigation>

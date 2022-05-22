@@ -30,7 +30,7 @@ class BlankFragment : Fragment() {
         val btn8:Button = view.findViewById(R.id.button8)
         btn8.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
-                p0?.findNavController()?.navigate(R.id.action_blankFragment_to_blankFragment2)
+                p0?.findNavController()?.navigate(R.id.action_blankFragment_to_blankFragment5)
             }
         })
         val btn:Button=view.findViewById(R.id.button)
