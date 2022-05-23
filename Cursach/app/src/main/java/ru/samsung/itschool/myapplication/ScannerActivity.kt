@@ -52,8 +52,13 @@ class ScannerActivity : Fragment(), ZBarScannerView.ResultHandler {
         else{
             bundle.putString("error","Гы гы гы )))) Не то")
         }
+        bundle.putString("name",arguments?.getString("key"))
+        bundle.putString("uid",arguments?.getString("uid"))
+        bundle.putStringArrayList("link",arguments?.getStringArrayList("link"))
+
         val fragment:Int? =arguments?.getInt("fragment")
         bundle.putInt("count", arguments?.getInt("count")!!)
+        bundle.putString("uid7",arguments?.getString("uid7"))
         bundle.putString("quest", arguments?.getString("quest"))
         bundle.putString("help", arguments?.getString("help"))
         when (fragment) {

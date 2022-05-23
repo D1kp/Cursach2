@@ -2,7 +2,6 @@ package ru.samsung.itschool.myapplication
 
 import android.os.Bundle
 import android.text.TextUtils
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,13 +9,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.google.android.gms.tasks.Task
 import com.google.firebase.database.FirebaseDatabase
 
 
-
 class BlankFragment : Fragment() {
+
+
+
 
     private val pasword:String = "111"
     private var user:String = ""
@@ -75,5 +76,8 @@ class BlankFragment : Fragment() {
         return view
     }
 
+    interface OnBackPressedListener {
+        fun onBackPressed()
+    }
 }
 

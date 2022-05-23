@@ -15,7 +15,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    override  fun onBackPressed(){
+
+   /* override  fun onBackPressed(){
         if(backPressedTime!! + 2000>System.currentTimeMillis())
         {
             backToast?.cancel()
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             backToast?.show()
         }
         backPressedTime = System.currentTimeMillis()
-    }
+    }*/
+
 
 }

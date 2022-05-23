@@ -2,8 +2,8 @@ package ru.samsung.itschool.myapplication
 
 
 class Member{
-    public  var zadacha:ArrayList<String>? =null
-    public var komand:String = ""
+        var zadacha:ArrayList<String>? =null
+        var komand:String = ""
     constructor(){}
     constructor(zadacha: ArrayList<String>?, komand: String) {
         this.zadacha = zadacha

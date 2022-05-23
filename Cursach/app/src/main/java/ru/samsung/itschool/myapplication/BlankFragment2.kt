@@ -26,7 +26,7 @@ class BlankFragment2 : Fragment() {
     private var bScanner: Button? = null
     private  var backButton:ImageButton ?= null
 
-    private val linkArray: Array<String> = arrayOf("http://robostem.ru/wp-content/uploads/2020/11/1-Биатлон.docx",//1-Биатлон
+    public val linkArray: Array<String> = arrayOf("http://robostem.ru/wp-content/uploads/2020/11/1-Биатлон.docx",//1-Биатлон
     "http://robostem.ru/wp-content/uploads/2020/11/1-%D0%9A%D0%B5%D0%B3%D0%B5%D0%BB%D1%8C%D1%80%D0%B8%D0%BD%D0%B3.docx",//1-Кегельринг
     "http://robostem.ru/wp-content/uploads/2020/11/1-%D0%9A%D0%B5%D0%B3%D0%B5%D0%BB%D1%8C%D1%80%D0%B8%D0%BD%D0%B3%D0%9A%D0%92%D0%90%D0%94%D0%A0%D0%9E.docx",//1-КегельрингКВАДРО
     "http://robostem.ru/wp-content/uploads/2020/11/1-%D0%9B%D0%B8%D0%BD%D0%B8%D1%8F.docx",//1-Линия
