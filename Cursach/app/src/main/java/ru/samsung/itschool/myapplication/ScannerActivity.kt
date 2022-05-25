@@ -58,6 +58,7 @@ class ScannerActivity : Fragment(), ZBarScannerView.ResultHandler {
 
         val fragment:Int? =arguments?.getInt("fragment")
         bundle.putInt("count", arguments?.getInt("count")!!)
+        bundle.putInt("flag", arguments?.getInt("flag")!!)
         bundle.putString("uid7",arguments?.getString("uid7"))
         bundle.putString("quest", arguments?.getString("quest"))
         bundle.putString("help", arguments?.getString("help"))
