@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BlankFragment7"
+    android:background="#FFFFFF">
+
+    <FrameLayout
+        android:layout_width="411dp"
+        android:layout_height="750dp"
+        android:layout_marginTop="254dp"
+        android:background="@drawable/grad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Следуй за подсказками и сканируй!"
+            android:textColor="#303F9F"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/Link2"
+            style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+            android:layout_width="370dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="70dp"
+            android:background="#FFFFFF"
+            android:clickable="false"
+            android:ems="10"
+            android:focusable="false"
+            android:hapticFeedbackEnabled="false"
+            android:inputType="textPersonName"
+            android:lineSpacingExtra="8sp"
+            android:minHeight="36dp"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:textColor="#000000"
+            android:textColorHint="#434343"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        <EditText
+            android:id="@+id/Link3"
+            style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="400dp"
+            android:background="#FFFFFF"
+            android:clickable="false"
+            android:ems="10"
+            android:focusable="false"
+            android:hapticFeedbackEnabled="false"
+            android:hint="Результат"
+            android:inputType="textPersonName"
+            android:lineSpacingExtra="8sp"
+            android:minHeight="36dp"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:textColor="#000000"
+            android:textColorHint="#434343"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/button25"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="300dp"
+            android:background="@drawable/round_shape_btn"
+            android:backgroundTint="#303F9F"
+            android:text="Сканировать" />
+        <Button
+            android:id="@+id/button26"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="210dp"
+            android:layout_marginTop="300dp"
+            android:background="@drawable/round_shape_btn"
+            android:backgroundTint="#303F9F"
+            android:text="Что там дальше?" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="211dp"
+        android:layout_height="211dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/_5" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="61dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="350dp"
+        android:src="@android:drawable/ic_menu_revert"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</FrameLayout>
