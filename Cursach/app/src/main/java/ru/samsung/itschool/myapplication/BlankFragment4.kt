@@ -20,16 +20,18 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.samsung.itschool.myapplication.databinding.Fragment4Binding
 
 
-class BlankFragment4 : Fragment(),RVAdapter.MyOnClickListener {
+class BlankFragment4 : Fragment(),RVAdapter.MyOnClickListener,RViwerAdapter.MyOnClickListener {
     private var listview:ListView? = null
     private var recview:RecyclerView?=null
     private val myRef =  FirebaseDatabase.getInstance("https://robostem-f9d54-default-rtdb.firebaseio.com/").getReference("Comands")
+    private val refV = FirebaseDatabase.getInstance("https://robostem-f9d54-default-rtdb.firebaseio.com/").getReference("Viewer")
     private var dataBase:ArrayList<String> ?= null
     private var adapter:ArrayAdapter<String> ?=null
     lateinit var binding:Fragment4Binding
     private var memberlist = ArrayList<Member>()
     private var listdata = ArrayList<String>()
     private var viwersname = ArrayList<String>()
+    private var scorelist = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +55,7 @@ class BlankFragment4 : Fragment(),RVAdapter.MyOnClickListener {
         binding = Fragment4Binding.bind(view)
         init()
         getData()
+        getViewer()
         binding.apply {
             users.setOnClickListener(object : View.OnClickListener{
                 override fun onClick(p0: View?) {
@@ -61,10 +64,12 @@ class BlankFragment4 : Fragment(),RVAdapter.MyOnClickListener {
                     recview?.adapter = adapt
                     adapt.addMember(dataBase!!)
                 }
-
             })
             viewers.setOnClickListener {
-               // val adapter = RVAdapter(viewers,this@BlankFragment4)
+                val adapter = RViwerAdapter(viwersname,this@BlankFragment4)
+                recview?.layoutManager = LinearLayoutManager(requireContext())
+                recview?.adapter = adapter
+                adapter.addMember(viwersname)
             }
         }
     }
@@ -79,6 +84,30 @@ class BlankFragment4 : Fragment(),RVAdapter.MyOnClickListener {
 
     }
 
+    private fun getViewer(){
+        val vListener: ValueEventListener = object:ValueEventListener{
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(viwersname.size > 0) {
+                    viwersname.clear()
+                }
+                for(ds:DataSnapshot in snapshot.children){
+                    val userModel= ds.value as HashMap<*, *>
+                    val name = userModel.get("name")
+
+                    //Toast.makeText(requireContext(),"$userModel",Toast.LENGTH_LONG).show()
+                    viwersname.add(name.toString())
+                    scorelist.add(userModel.get("score").toString())
+                }
+                adapter?.notifyDataSetChanged()
+            }
+            override fun onCancelled(error: DatabaseError) {
+                Log.w(TAG, "Failed to read value.", error.toException())
+            }
+        }
+        refV.addValueEventListener(vListener)
+
+    }
 
 
    private fun getData()
@@ -142,6 +171,10 @@ class BlankFragment4 : Fragment(),RVAdapter.MyOnClickListener {
     override fun OnClick(member:Member) {
         getlinkUser(member.komand)
         adapter = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1, listdata)
+        listview?.adapter = adapter
+    }
+    override fun OnClick(viewer: String){
+        adapter = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1, scorelist)
         listview?.adapter = adapter
     }
 }
