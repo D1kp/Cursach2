@@ -30,6 +30,7 @@ class BlankFragment7 : Fragment() {
     private val base = FirebaseDatabase.getInstance("https://robostem-f9d54-default-rtdb.firebaseio.com/")
     private val user = base.getReference("Viewer")
     private val bundle = Bundle()
+    private var flag_apdate: Int = 0
     private val ListArrey :Array<Int> = arrayOf(
         379903,
         379903,
@@ -45,6 +46,7 @@ class BlankFragment7 : Fragment() {
     )
 
     private val QuestArrey :Array<String> = arrayOf(
+        "Двигайся туда, опираясь только на конечности, напоминающие ноги живого существа. Ваши стопы в ходе движения не должны быть выше, чем связаная с ней точка крепления.",
         "В зоне мероприятия, есть место где сортируют отходы, вам нужно найти его. Но может эти отходы и разбрасывают, кто знает этих робото",
         "Идите туда где вам помогут в уборной, в срочной ситуации, ведь доставка это очень важная вещь, когда это так необходимо",
         "Вам надоело ожидать груз по часу после прилета, ничего страшного, на нашем мероприятии роботы сами доставляют груз, и возможно делают это быстрее, сходите и проверьте",
@@ -53,9 +55,8 @@ class BlankFragment7 : Fragment() {
         "Вы наверно уже запутались в нашем лабиринте , но ничего страшного ведь есть место, в котором роботы проходят лабиринты, может они подскажут вам выход?",
         "Найдите место где линией изображено очертание морского котика, раньше это был логотип мероприятия робонорд",
         "Найдите место, где роботы справляются с работой лучше, чем работники ЖКХ. Если программу для робота написал хороший программист, иначе вы увидите робота из ЖКХ)",
-        "После сортировки мусора нужна же его доставка, найдите место, где происходит доставка",
-        "Ты победил, редиска!!!",
-        "Двигайся туда, опираясь только на конечности, напоминающие ноги живого существа. Ваши стопы в ходе движения не должны быть выше, чем связаная с ней точка крепления."
+        "После сортировки мусора нужна же его доставка, найдите место, где происходит доставка"
+
     )
 
     private val HelpArrey :Array<String> = arrayOf(
@@ -105,6 +106,8 @@ class BlankFragment7 : Fragment() {
 
         } else {
             bundle.putInt("fragment",7)
+            flag_apdate = 1
+            bundle.putInt("flag",flag_apdate)
             bundle.putString("uid7",arguments?.getString("uid7"))
             view?.findNavController()?.navigate(R.id.action_blankFragment7_to_scannerActivity, bundle)
         }
@@ -117,6 +120,7 @@ class BlankFragment7 : Fragment() {
         val next_btn: Button? = view?.findViewById(R.id.button26)
         var txt:Int = 379903
         var count: Int = 0
+
         var quest = ""
         var help = ""
         if (link1 != null) {
@@ -127,10 +131,12 @@ class BlankFragment7 : Fragment() {
         if(arguments?.getInt("key")==null){txt = 10}
         else{txt = arguments?.getInt("key")!!
         }
-        if(arguments?.getInt("count")==null){count = 10}
+        if(arguments?.getInt("count")==null){count = 0}
         else{count = arguments?.getInt("count")!!
         }
-
+        if(arguments?.getInt("flag")==null){flag_apdate = 0}
+        else{flag_apdate = arguments?.getInt("flag")!!
+        }
         bundle.putString("help","Плавильно продолжай!")
         if(arguments?.getString("quest")==null){quest = "abc"}
         else{link1?.text = arguments?.getString("quest")
@@ -142,34 +148,37 @@ class BlankFragment7 : Fragment() {
         }
         for(i in 0 .. 9) {
             if (txt == ListArrey[count] && count == i) {
-
-                link?.setText("Плавильно продолжай!")
                 count += 1
                 bundle.putInt("count",count)
                 val uid = arguments?.getString("uid7")
+                flag_apdate = 2
                 user.child(uid!!).updateChildren(mapOf("score" to count))
                 if(count == 9)
                 {
                     dialogwin()
                 }
                 break
-            } else {
-                link?.setText(HelpArrey[i])
-                bundle.putString("help",help)
-                bundle.putString("quest",QuestArrey[i])
-                //break
             }
         }
-
-        if ( count == 10) {
-            help = HelpArrey[10]
-            quest = QuestArrey[10]
-            link?.setText(help)
-            link1?.text=QuestArrey[10]
+        if(flag_apdate == 0) {
+            link?.setText(HelpArrey[10])
+            link1?.text=QuestArrey[count]
             bundle.putString("help",help)
-            bundle.putString("quest",quest)
-            count = 0
+            bundle.putString("quest",QuestArrey[count])
+
+        }else {
+            if (flag_apdate == 1) {
+                link?.setText(HelpArrey[count])
+                link1?.text=QuestArrey[count]
+                bundle.putString("help",help)
+                bundle.putString("quest",QuestArrey[count])
+            }else{
+                link?.setText("Плавильно продолжай!")
+                link1?.text=QuestArrey[count-1]
+                flag_apdate = 0
+            }
         }
+        bundle.putInt("flag",flag_apdate)
         next_btn?.setOnClickListener {
             for(i in 0 .. QuestArrey.size-1){
                 if (txt == ListArrey[count] && count == i) {

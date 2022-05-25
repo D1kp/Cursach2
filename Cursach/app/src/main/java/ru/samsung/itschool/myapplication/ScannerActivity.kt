@@ -60,6 +60,7 @@ class ScannerActivity : Fragment(), ZBarScannerView.ResultHandler {
         bundle.putInt("count", arguments?.getInt("count")!!)
         bundle.putString("uid7",arguments?.getString("uid7"))
         bundle.putString("quest", arguments?.getString("quest"))
+        bundle.putInt("flag", arguments?.getInt("flag")!!)
         bundle.putString("help", arguments?.getString("help"))
         when (fragment) {
             7 -> view?.findNavController()?.navigate(R.id.action_scannerActivity_to_blankFragment7,bundle)

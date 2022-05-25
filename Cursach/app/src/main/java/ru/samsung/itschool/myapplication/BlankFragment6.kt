@@ -92,7 +92,7 @@ class BlankFragment6 : Fragment() {
             Button_[i]!!.setOnClickListener{
                 if(num_rand == i){
                     if(flag) {
-                        bundle.putInt("count", 10)
+                        bundle.putInt("count", 0)
                         requireView().findNavController()
                             .navigate(R.id.action_blankFragment6_to_blankFragment7, bundle)
                     }
