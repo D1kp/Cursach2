@@ -13,7 +13,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import android.widget.Toast
 
 
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,6 +29,7 @@ class BlankFragment4 : Fragment(),RVAdapter.MyOnClickListener {
     lateinit var binding:Fragment4Binding
     private var memberlist = ArrayList<Member>()
     private var listdata = ArrayList<String>()
+    private var viwersname = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +54,7 @@ class BlankFragment4 : Fragment(),RVAdapter.MyOnClickListener {
         init()
         getData()
         binding.apply {
-            button4.setOnClickListener(object : View.OnClickListener{
+            users.setOnClickListener(object : View.OnClickListener{
                 override fun onClick(p0: View?) {
                     val adapt = RVAdapter(memberlist,this@BlankFragment4)
                     recview?.layoutManager = LinearLayoutManager(requireContext())
@@ -63,6 +63,9 @@ class BlankFragment4 : Fragment(),RVAdapter.MyOnClickListener {
                 }
 
             })
+            viewers.setOnClickListener {
+               // val adapter = RVAdapter(viewers,this@BlankFragment4)
+            }
         }
     }
 

@@ -67,15 +67,17 @@
             android:layout_width="173dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="110dp"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="420dp"
             android:backgroundTint="#303F9F"
             android:text="Скачать"
+            android:background="@drawable/round_shape_btn"
             android:textAllCaps="true" />
 
         <Button
             android:id="@+id/button9"
             android:layout_width="173dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/round_shape_btn"
             android:layout_marginStart="110dp"
             android:layout_marginTop="200dp"
             android:backgroundTint="#303F9F"
