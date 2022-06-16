@@ -10,11 +10,4 @@ class Member{
         this.komand = komand
     }
 
-    fun toMap():Map<String,Any?>{
-        return mapOf(
-            "komand" to komand,
-            "zadacha" to zadacha
-        )
-    }
-
 }

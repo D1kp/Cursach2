@@ -14,9 +14,6 @@ class ScannerActivity : Fragment(), ZBarScannerView.ResultHandler {
     private lateinit var zbView: ZBarScannerView
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,8 +26,6 @@ class ScannerActivity : Fragment(), ZBarScannerView.ResultHandler {
         return zbView
     }
 
-    //zbView = ZBarScannerView(this)
-    //setContentView(zbView)
     override fun onPause() {
         super.onPause()
         zbView.stopCamera()
@@ -58,6 +53,7 @@ class ScannerActivity : Fragment(), ZBarScannerView.ResultHandler {
 
         val fragment:Int? =arguments?.getInt("fragment")
         bundle.putInt("count", arguments?.getInt("count")!!)
+        bundle.putInt("flag", arguments?.getInt("flag")!!)
         bundle.putString("uid7",arguments?.getString("uid7"))
         bundle.putString("quest", arguments?.getString("quest"))
         bundle.putString("help", arguments?.getString("help"))

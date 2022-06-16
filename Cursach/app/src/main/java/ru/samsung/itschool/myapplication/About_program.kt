@@ -14,13 +14,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 
 
-class BlankFragment3 : Fragment() {
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+class About_program : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

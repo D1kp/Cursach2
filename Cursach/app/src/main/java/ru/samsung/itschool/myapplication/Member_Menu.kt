@@ -16,7 +16,7 @@ import androidx.navigation.findNavController
 import com.google.firebase.database.FirebaseDatabase
 
 
-class BlankFragment2 : Fragment() {
+class Member_Menu : Fragment() {
     private val base = FirebaseDatabase.getInstance("https://robostem-f9d54-default-rtdb.firebaseio.com/").getReference("Comands")
     private var name:String? = null
     private var uid:String? = null

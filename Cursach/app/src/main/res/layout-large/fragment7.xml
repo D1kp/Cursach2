@@ -4,56 +4,69 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Member_Menu"
+    tools:context=".MiniGame_Menu"
     android:background="#FFFFFF">
+
     <FrameLayout
         android:layout_width="411dp"
         android:layout_height="750dp"
+        android:layout_marginTop="254dp"
         android:background="@drawable/grad"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="254dp">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="150dp"
-            android:text="Наведите камеру на QR код"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Следуй за подсказками и сканируй!"
             android:textColor="#303F9F"
             android:textSize="20sp"
             android:textStyle="bold" />
+
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="130dp"
-            android:layout_marginTop="300dp"
-            android:text="Найден файл:"
-            android:textColor="#303F9F"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/Link"
+            android:id="@+id/Link2"
             style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
-            android:layout_width="187dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="102dp"
-            android:layout_marginTop="350dp"
+            android:layout_width="370dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="70dp"
             android:background="#FFFFFF"
             android:clickable="false"
             android:ems="10"
             android:focusable="false"
             android:hapticFeedbackEnabled="false"
-            android:hint="Адрес файла"
             android:inputType="textPersonName"
             android:lineSpacingExtra="8sp"
-            android:minHeight="48dp"
+            android:minHeight="36dp"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:textColor="#000000"
+            android:textColorHint="#434343"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        <EditText
+            android:id="@+id/Link3"
+            style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="400dp"
+            android:background="#FFFFFF"
+            android:clickable="false"
+            android:ems="10"
+            android:focusable="false"
+            android:hapticFeedbackEnabled="false"
+            android:hint="Результат"
+            android:inputType="textPersonName"
+            android:lineSpacingExtra="8sp"
+            android:minHeight="36dp"
             android:selectAllOnFocus="false"
             android:singleLine="false"
             android:textColor="#000000"
@@ -63,25 +76,23 @@
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/button25"
             android:layout_width="173dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="420dp"
-            android:backgroundTint="#303F9F"
-            android:text="Скачать"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="300dp"
             android:background="@drawable/round_shape_btn"
-            android:textAllCaps="true" />
-
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="173dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/round_shape_btn"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="200dp"
             android:backgroundTint="#303F9F"
             android:text="Сканировать" />
+        <Button
+            android:id="@+id/button26"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="210dp"
+            android:layout_marginTop="300dp"
+            android:background="@drawable/round_shape_btn"
+            android:backgroundTint="#303F9F"
+            android:text="Что там дальше?" />
 
     </FrameLayout>
 
@@ -93,7 +104,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/try4" />
+        app:srcCompat="@drawable/_5" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -102,4 +113,5 @@
         android:layout_marginStart="350dp"
         android:src="@android:drawable/ic_menu_revert"
         tools:ignore="SpeakableTextPresentCheck" />
+
 </FrameLayout>

@@ -6,7 +6,7 @@
     app:startDestination="@id/blankFragment">
     <fragment
         android:id="@+id/blankFragment"
-        android:name="ru.samsung.itschool.myapplication.BlankFragment"
+        android:name="ru.samsung.itschool.myapplication.Main_Menu"
         android:label="fragment_1"
         tools:layout="@layout/fragment1" >
         <action
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/blankFragment2"
-        android:name="ru.samsung.itschool.myapplication.BlankFragment2"
+        android:name="ru.samsung.itschool.myapplication.Member_Menu"
         android:label="fragment2"
         tools:layout="@layout/fragment2" >
         <action
@@ -41,7 +41,7 @@
     </fragment>
     <fragment
         android:id="@+id/blankFragment3"
-        android:name="ru.samsung.itschool.myapplication.BlankFragment3"
+        android:name="ru.samsung.itschool.myapplication.About_program"
         android:label="fragment3"
         tools:layout="@layout/fragment3" >
         <action
@@ -50,7 +50,7 @@
     </fragment>
     <fragment
         android:id="@+id/blankFragment4"
-        android:name="ru.samsung.itschool.myapplication.BlankFragment4"
+        android:name="ru.samsung.itschool.myapplication.Admin_Menu"
         android:label="fragment4"
         tools:layout="@layout/fragment4">
         <deepLink
@@ -82,7 +82,7 @@
     </fragment>
     <fragment
         android:id="@+id/blankFragment5"
-        android:name="ru.samsung.itschool.myapplication.BlankFragment5"
+        android:name="ru.samsung.itschool.myapplication.Viewers_Menu"
         android:label="fragment5"
         tools:layout="@layout/fragment5" >
         <action
@@ -97,7 +97,7 @@
     </fragment>
     <fragment
         android:id="@+id/blankFragment6"
-        android:name="ru.samsung.itschool.myapplication.BlankFragment6"
+        android:name="ru.samsung.itschool.myapplication.reg_MiniGame_Menu"
         android:label="fragment6"
         tools:layout="@layout/fragment6" >
         <action
@@ -109,7 +109,7 @@
     </fragment>
     <fragment
         android:id="@+id/blankFragment7"
-        android:name="ru.samsung.itschool.myapplication.BlankFragment7"
+        android:name="ru.samsung.itschool.myapplication.MiniGame_Menu"
         android:label="fragment7"
         tools:layout="@layout/fragment7" >
         <action
