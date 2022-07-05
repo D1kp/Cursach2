@@ -93,7 +93,7 @@
             android:layout_marginTop="410dp"
             android:background="@drawable/round_shape_btn"
             android:backgroundTint="#303F9F"
-            android:text="Сдесь"
+            android:text="Здесь"
             android:textAllCaps="true" />
 
         <Button
