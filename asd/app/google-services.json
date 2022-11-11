@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "426674736115",
+    "project_id": "robosteam-9e4f0",
+    "storage_bucket": "robosteam-9e4f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426674736115:android:ef1930560f7daee8016086",
+        "android_client_info": {
+          "package_name": "ru.samsung.itschool.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "426674736115-t6bhd5j7tkd95vinlgnt2qel4mlact4n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCq8x5JiGBVgfwcOR4Guo2U4DF6YadMpL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "426674736115-t6bhd5j7tkd95vinlgnt2qel4mlact4n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
